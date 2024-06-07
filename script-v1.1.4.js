@@ -40,7 +40,7 @@ const updateStatus = () => {
         replyBox.insertAdjacentHTML('beforeend','<span><span class="invisible inline-flex w-10 bg-white p-2" aria-hidden="true"></span><span class="absolute -bottom-0.5 right-0 inline-flex items-center gap-1"><span class="text-xs text-[#667781] dark:text-[#99beb7]">'+ messageTime +'</span></span></span>');
       }
 
-      messagesLength = allReplys.length; 
+      messagesLength = allMessages.length; 
     }
 
     const allReplys = typebotContainer.querySelector('.typebot-chat-view').querySelectorAll('.typebot-guest-bubble');  
