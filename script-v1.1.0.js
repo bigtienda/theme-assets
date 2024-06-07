@@ -6,6 +6,42 @@ const runColorMode = (fn) => {
   fn(query.matches);
   query.addEventListener('change', (event) => fn(event.matches));
 }
+const updateStatus = () => {
+  let messagesLength = 0;
+  let replysLength = 0;
+
+  const typebotContainer = document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container');
+  const status = document.querySelector('#top-bar #status');
+
+  const alertNotify = document.createElement('audio');
+  alertNotify.src = 'https://s3.fr-par.scw.cloud/typebot/public/typebots/rx0zcrlqkhifqajxuzr6txa9/blocks/ttfglhs9oks32ebn2ymqcrp1';
+
+  setInterval(() => {
+    const isTyping = typebotContainer.querySelector('.bubble1');
+    const sibling = isTyping?.parentElement?.parentElement?.nextSibling; 
+
+    if(isTyping && sibling.src) {
+      status.innerText = 'grabando audio...';
+    } else if(isTyping) {      
+      status.innerText = 'escribiendo...';
+    } else {
+      status.innerText = 'online';
+    }
+
+    const allReplys = typebotContainer.querySelector('.typebot-chat-view').querySelectorAll('.typebot-guest-bubble');  
+
+    if(allReplys.length > replysLength) {
+      for (let i = replysLength; i < allReplys.length; i++) {
+        const now = new Date();
+        const replyTime = (now.getHours() < 10 ? '0' : '') + now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+        const replyBox = allReplys[i];
+        replyBox.insertAdjacentHTML('beforeend','<span><span class="invisible inline-flex w-14 bg-white p-2" aria-hidden=true></span><span class="absolute bottom-1.5 right-2 inline-flex items-center gap-1"><span class="text-xs text-[#667781] dark:text-[#99beb7]">'+ replyTime +'</span><span class="h-2 w-4"><svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 16 11"><path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.405-2.272a.463.463 0 0 0-.336-.146.47.47 0 0 0-.343.146l-.311.31a.445.445 0 0 0-.14.337c0 .136.047.25.14.343l2.996 2.996a.724.724 0 0 0 .501.203.697.697 0 0 0 .546-.266l6.646-8.417a.497.497 0 0 0 .108-.299.441.441 0 0 0-.19-.374L11.07.653Zm-2.45 7.674a15.31 15.31 0 0 1-.546-.355.43.43 0 0 0-.317-.12.46.46 0 0 0-.362.158l-.292.33a.482.482 0 0 0 .013.666l1.079 1.073c.135.135.3.203.495.203a.699.699 0 0 0 .552-.267l6.62-8.391a.446.446 0 0 0 .109-.298.487.487 0 0 0-.178-.375l-.355-.273a.487.487 0 0 0-.673.076L8.62 8.327Z" class=dark:fill-[#53bcea] fill=#009de2 /></svg></span></span></span>');
+      }
+
+      replysLength = allReplys.length; 
+    }
+  }, 400);
+};
 
 runColorMode((isDarkMode) => {
   if (isDarkMode) {
@@ -14,3 +50,6 @@ runColorMode((isDarkMode) => {
     document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('dark');
   }
 });
+
+updateStatus();
+
