@@ -11,9 +11,9 @@ const updateStatus = () => {
   let replysLength = 0;
 
   const typebotContainer = document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container');
-  const status = document.querySelector('#top-bar #status');
+  const status = typebotContainer.querySelector('#top-bar #status');
 
-  const alertNotify = document.createElement('audio');
+  const alertNotify = typebotContainer.createElement('audio');
   alertNotify.src = 'https://s3.fr-par.scw.cloud/typebot/public/typebots/rx0zcrlqkhifqajxuzr6txa9/blocks/ttfglhs9oks32ebn2ymqcrp1';
 
   setInterval(() => {
