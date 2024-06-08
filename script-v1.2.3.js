@@ -35,10 +35,12 @@ const updateStatus = () => {
     if(allMessages.length > messagesLength) {
       for (let i = messagesLength; i < allMessages.length; i++) {
         let now = new Date();
-        const messageTime = (now.getHours() < 10 ? '0' : '') + now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
-        const messageBox = allMessages[i];
-        if(messageBox.querySelector('.bubble-typing + figure')) {
-          messageBox.querySelector('.bubble-typing + figure').insertAdjacentHTML('beforeend','<span><span class="invisible inline-flex w-10 bg-white flex p-1.5" aria-hidden="true"></span><span class="absolute bottom-1 right-4 inline-flex items-center gap-1"><div class="text-xs text-[#667781] dark:text-[#99beb7]">'+ messageTime +'</div></span></span>');
+        let messageTime = (now.getHours() < 10 ? '0' : '') + now.getHours() + ':' + (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+        let messageBox = allMessages[i];
+        
+        let figureMessage = messageBox.querySelector('.bubble-typing + figure');
+        if(figureMessage) {
+          figureMessage.insertAdjacentHTML('beforeend','<span><span class="invisible w-10 bg-white flex p-2" aria-hidden="true"></span><span class="absolute bottom-1.5 right-4 inline-flex items-center gap-1"><div class="text-xs text-[#667781] dark:text-[#99beb7]">'+ messageTime +'</div></span></span>');
         }else{
           messageBox.querySelector('div > div[data-element-type="p"] > span').insertAdjacentHTML('beforeend','<span><span class="invisible inline-flex w-10 bg-white p-2" aria-hidden="true"></span><span class="absolute -bottom-0.5 right-0 inline-flex items-center gap-1"><div class="text-xs text-[#667781] dark:text-[#99beb7]">'+ messageTime +'</div></span></span>');
         }
