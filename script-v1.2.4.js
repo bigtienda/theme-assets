@@ -2,13 +2,6 @@ document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-co
 
 document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container .typebot-chat-view').insertAdjacentHTML('afterbegin', '<div class="chat-start-info w-full flex flex-col items-center px-5 py-5 gap-4"> <div class="bg-[#f8f7f7] dark:bg-[#1c272d] py-1 px-3 rounded-md w-min text-[#54656f] dark:text-[#8696a0] shadow-[0_1px_0.5px_rgba(11,20,26,0.08)]">Hoy</div> <div class="py-1.5 px-3 rounded-md bg-[#cbf2ee] dark:bg-[#1c272d] p-4 text-center leading-tight shadow-[0_1px_0.5px_rgba(11,20,26,0.08)]"><span class="inline-flex w-3.5 h-3.5 align-top mt-1"><svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 11 11"><path d="M5 0a5 5 0 1 1 0 10A5 5 0 0 1 5 0Zm-.027 4.118a.649.649 0 0 0-.649.648v2.757a.649.649 0 0 0 1.298 0V4.766a.649.649 0 0 0-.649-.648ZM5 1.892c-.227 0-.406.069-.538.206a.73.73 0 0 0-.197.527c0 .216.067.393.202.53A.712.712 0 0 0 5 3.363c.22 0 .399-.068.533-.206a.728.728 0 0 0 .202-.531.726.726 0 0 0-.2-.527c-.133-.137-.311-.206-.535-.206Z" class=dark:fill-[#5faca7] fill=#54656f /></svg></span> <span class="text-[#54656f] dark:text-[#5faca7] align-top text-sm">Esta empresa usa un servicio seguro de Meta para administrar este chat. Toca para obtener más información.</span></div> </div>');
 
-const runColorMode = (fn) => {
-  if (!window.matchMedia) return;
-  const query = window.matchMedia('(prefers-color-scheme: dark)');
-  fn(query.matches);
-  query.addEventListener('change', (event) => fn(event.matches));
-}
-
 const updateStatus = () => {
   let messagesLength = 0;
   let replysLength = 0;
@@ -63,14 +56,6 @@ const updateStatus = () => {
     }
   }, 400);
 };
-
-runColorMode((isDarkMode) => {
-  if (isDarkMode) {
-    document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('dark');
-  } else {
-    document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('dark');
-  }
-});
 
 updateStatus();
 
