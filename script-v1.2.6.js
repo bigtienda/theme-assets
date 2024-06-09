@@ -33,7 +33,7 @@ const updateStatus = () => {
 
         let figureMessage = messageBox.querySelector('.bubble-typing + figure');
         if(figureMessage) {
-          figureMessage.insertAdjacentHTML('beforeend','<span><span class="absolute inline-flex h-10 w-[calc(100%-16px)] bg-gradient-to-t from-[rgba(11,20,26,.5)] to-[rgba(11,20,26,0)] bottom-2 items-center flex p-2" aria-hidden="true"></span><span class="absolute bottom-2.5 right-4 inline-flex items-center gap-1"><div class="text-xs text-[rgba(233,237,239,.9)]">'+ messageTime +'</div></span></span>');
+          figureMessage.insertAdjacentHTML('beforeend','<span><span class="absolute inline-flex h-10 w-[calc(100%-16px)] bg-gradient-to-t from-[rgba(11,20,26,.5)] to-[rgba(11,20,26,0)] bottom-2 items-center flex p-2 rounded-b-md" aria-hidden="true"></span><span class="absolute bottom-2.5 right-4 inline-flex items-center gap-1"><div class="text-xs text-[rgba(233,237,239,.9)]">'+ messageTime +'</div></span></span>');
         }else{
           messageBox.querySelector('div > div[data-element-type="p"] > span').insertAdjacentHTML('beforeend','<span><span class="invisible inline-flex w-10 bg-white p-2" aria-hidden="true"></span><span class="absolute -bottom-0.5 right-0 inline-flex items-center gap-1"><div class="text-xs text-[#667781] dark:text-[#99beb7]">'+ messageTime +'</div></span></span>');
         }
