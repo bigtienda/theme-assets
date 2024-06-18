@@ -51,7 +51,8 @@ const updateStatus = () => {
             
             messageAudio.style.display = 'none';
             let profileImage = typebotContainer.querySelector('#profile-image img');
-            messageAudio.insertAdjacentHTML('afterend','<wave-audio-path-player src="'+ messageAudio.src +'" wave-width="'+ messageAudioWidth +'" wave-height="40" class="z-20" profile-src="'+ profileImage.src +'" received-message="'+ messageTime +'" autoplay="'+ (messageAudio.getAttribute('autoplay') != null)? "true" : "false" +'"></wave-audio-path-player>')
+            let autoplay = (messageAudio.getAttribute('autoplay') != null)? 'true' : 'false';
+            messageAudio.insertAdjacentHTML('afterend','<wave-audio-path-player src="'+ messageAudio.src +'" wave-width="'+ messageAudioWidth +'" wave-height="40" class="z-20" profile-src="'+ profileImage.src +'" received-message="'+ messageTime +'" autoplay="'+ autoplay +'"></wave-audio-path-player>')
           }else{
             messageBox.querySelector('div > div[data-element-type="p"] > span').insertAdjacentHTML('beforeend','<span><span class="invisible inline-flex w-10 bg-white p-2" aria-hidden="true"></span><span class="absolute -bottom-0.5 right-0 inline-flex items-center gap-1"><div class="text-xs text-[#667781] dark:text-[#99beb7]">'+ messageTime +'</div></span></span>');
           }
