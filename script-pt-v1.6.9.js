@@ -152,9 +152,10 @@ const infoSpanIcon = createElementWithAttributes('span', {
 });
 const infoSvg = createElementWithAttributes('svg', {
   xmlns: 'http://www.w3.org/2000/svg',
-  viewBox: '0 0 11 11'
+  viewBox: '0 0 11 11',
+  style: 'margin-right: 0.2rem'
 });
-infoSvg.innerHTML = '<path class="dark:fill-[#5faca7]" fill=#54656f style="margin-right: 0.2rem" d="M5 0a5 5 0 1 1 0 10A5 5 0 0 1 5 0Zm-.027 4.118a.649.649 0 0 0-.649.648v2.757a.649.649 0 0 0 1.298 0V4.766a.649.649 0 0 0-.649-.648ZM5 1.892c-.227 0-.406.069-.538.206a.73.73 0 0 0-.197.527c0 .216.067.393.202.53A.712.712 0 0 0 5 3.363c.22 0 .399-.068.533-.206a.728.728 0 0 0 .202-.531.726.726 0 0 0-.2-.527c-.133-.137-.311-.206-.535-.206Z" />';
+infoSvg.innerHTML = '<path class="dark:fill-[#5faca7]" fill=#54656f d="M5 0a5 5 0 1 1 0 10A5 5 0 0 1 5 0Zm-.027 4.118a.649.649 0 0 0-.649.648v2.757a.649.649 0 0 0 1.298 0V4.766a.649.649 0 0 0-.649-.648ZM5 1.892c-.227 0-.406.069-.538.206a.73.73 0 0 0-.197.527c0 .216.067.393.202.53A.712.712 0 0 0 5 3.363c.22 0 .399-.068.533-.206a.728.728 0 0 0 .202-.531.726.726 0 0 0-.2-.527c-.133-.137-.311-.206-.535-.206Z" />';
 
 const infoSpanText = createElementWithAttributes('span', {
   classList: ['text-[#54656f]', 'dark:text-[#5faca7]', 'align-top', 'text-sm'],
