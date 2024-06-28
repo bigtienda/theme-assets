@@ -48,7 +48,7 @@ const backButtonSvg = createElementWithAttributes('svg', {
   xmlns: 'http://www.w3.org/2000/svg',
   viewBox: '0 0 72 72'
 });
-backButtonSvg.innerHTML = '<path class="dark:fill-[#e9edef] fill=#fff fill-opacity=.996" d="m24.46 33.03 31.2-.03q2.8-.01 4.18 2.42.37.64.11 1.25-.99 2.34-3.43 2.34-17.48-.03-31.81 0-1.12 0-.33.79l13.26 13.27q1.84 1.84.82 4.23-.34.8-1.13 1.05-2.29.7-3.97-.99L14.63 38.64q-2.61-2.62 0-5.24l18.8-18.84q1.69-1.69 3.95-.88 1.49.54 1.43 3.09a2.44 2.43 67.9 0 1-.7 1.66L24.2 32.42a.36.36 0 0 0 .26.61Z"/>';
+backButtonSvg.innerHTML = '<path class="dark:fill-[#e9edef]" fill=#fff fill-opacity=.996 d="m24.46 33.03 31.2-.03q2.8-.01 4.18 2.42.37.64.11 1.25-.99 2.34-3.43 2.34-17.48-.03-31.81 0-1.12 0-.33.79l13.26 13.27q1.84 1.84.82 4.23-.34.8-1.13 1.05-2.29.7-3.97-.99L14.63 38.64q-2.61-2.62 0-5.24l18.8-18.84q1.69-1.69 3.95-.88 1.49.54 1.43 3.09a2.44 2.43 67.9 0 1-.7 1.66L24.2 32.42a.36.36 0 0 0 .26.61Z"/>';
 
 const profileImage = createElementWithAttributes('div', {
   id: 'profile-image',
@@ -86,7 +86,7 @@ const cameraSvg = createElementWithAttributes('svg', {
   xmlns: 'http://www.w3.org/2000/svg',
   viewBox: '0 0 36 36'
 });
-cameraSvg.innerHTML = '<path class="dark:fill-[#e9edef] fill=#fff" d="m27.02 21.27-.04 5.74a3.01 3-89.8 0 1-3 2.99H6.02a3 2.99 0 0 1-3-2.99L3.01 9.48q0-3.42 3.42-3.46 8.94-.08 17.25.02 3.25.04 3.29 3.34.03 2.85.08 5.76a.26.25-23.7 0 0 .44.17l4.27-4.32a.72.72 0 0 1 1.23.51L33 23.68q0 2.59-1.82.74l-3.41-3.46q-.74-.75-.75.31Z"/>';
+cameraSvg.innerHTML = '<path class="dark:fill-[#e9edef]" fill=#fff d="m27.02 21.27-.04 5.74a3.01 3-89.8 0 1-3 2.99H6.02a3 2.99 0 0 1-3-2.99L3.01 9.48q0-3.42 3.42-3.46 8.94-.08 17.25.02 3.25.04 3.29 3.34.03 2.85.08 5.76a.26.25-23.7 0 0 .44.17l4.27-4.32a.72.72 0 0 1 1.23.51L33 23.68q0 2.59-1.82.74l-3.41-3.46q-.74-.75-.75.31Z"/>';
 
 const cellphoneDiv = createElementWithAttributes('div', {
   id: 'cellphone',
@@ -106,7 +106,7 @@ const moreSvg = createElementWithAttributes('svg', {
   xmlns: 'http://www.w3.org/2000/svg',
   viewBox: '0 0 72 72'
 });
-moreSvg.innerHTML = '<circle cx="36" cy="53.9" r="6" class="dark:fill-[#e9edef] fill=#fff"/> <circle cx="36" cy="35.9" r="6" class="dark:fill-[#e9edef] fill=#fff"/> <circle cx="36" cy="17.9" r="6" class="dark:fill-[#e9edef] fill=#fff"/>';
+moreSvg.innerHTML = '<circle cx="36" cy="53.9" r="6" class="dark:fill-[#e9edef]" fill=#fff/> <circle cx="36" cy="35.9" r="6" class="dark:fill-[#e9edef] fill=#fff"/> <circle cx="36" cy="17.9" r="6" class="dark:fill-[#e9edef] fill=#fff"/>';
 
 backButton.appendChild(backButtonSvg);
 profileImage.appendChild(profileImg);
