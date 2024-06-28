@@ -74,8 +74,8 @@ function createRightAreaIcon(id, sizeW, sizeH, svgContent) {
 }
 
 let cameraIcon = createRightAreaIcon('camera', '36', '36', '<path class="dark:fill-[#e9edef] fill=#fff" d="m27.02 21.27-.04 5.74a3.01 3-89.8 0 1-3 2.99H6.02a3 2.99 0 0 1-3-2.99L3.01 9.48q0-3.42 3.42-3.46 8.94-.08 17.25.02 3.25.04 3.29 3.34.03 2.85.08 5.76a.26.25-23.7 0 0 .44.17l4.27-4.32a.72.72 0 0 1 1.23.51L33 23.68q0 2.59-1.82.74l-3.41-3.46q-.74-.75-.75.31Z"/>');
-let cellphoneIcon = createRightAreaIcon('cellphone', '72', '72' '<path d="M40 51.8c3-3 5.7-7.2 10.5-6.8 2.7.2 5.2.6 7.5.9 3 .5 4.6 2.3 4.9 5.4.5 4.9.5 12.4-7 11.6-25.4-2.6-43.9-21-46.8-46.5-.5-4 1.8-7.2 6-7.4 4.7-.2 10-.6 11.1 5.4.6 3.3.8 6.3.8 8.9 0 2.9-4.9 6.9-6.9 8.8-.1.1-.2.3 0 .5 4.3 8.2 10.6 14.6 19 19.2.4.2.7.1 1-.2Z" class="dark:fill-[#e9edef] fill=#fff" style="stroke-width:0"/>');
-let moreIcon = createRightAreaIcon('more', '72', '72' '<circle cx=36 cy=53.9 r=6 class="dark:fill-[#e9edef] fill=#fff" /><circle cx=36 cy=35.9 r=6 class="dark:fill-[#e9edef] fill=#fff" /><circle cx=36 cy=17.9 r=6 class="dark:fill-[#e9edef] fill=#fff" />');
+let cellphoneIcon = createRightAreaIcon('cellphone', '72', '72', '<path d="M40 51.8c3-3 5.7-7.2 10.5-6.8 2.7.2 5.2.6 7.5.9 3 .5 4.6 2.3 4.9 5.4.5 4.9.5 12.4-7 11.6-25.4-2.6-43.9-21-46.8-46.5-.5-4 1.8-7.2 6-7.4 4.7-.2 10-.6 11.1 5.4.6 3.3.8 6.3.8 8.9 0 2.9-4.9 6.9-6.9 8.8-.1.1-.2.3 0 .5 4.3 8.2 10.6 14.6 19 19.2.4.2.7.1 1-.2Z" class="dark:fill-[#e9edef] fill=#fff" style="stroke-width:0"/>');
+let moreIcon = createRightAreaIcon('more', '72', '72', '<circle cx=36 cy=53.9 r=6 class="dark:fill-[#e9edef] fill=#fff" /><circle cx=36 cy=35.9 r=6 class="dark:fill-[#e9edef] fill=#fff" /><circle cx=36 cy=17.9 r=6 class="dark:fill-[#e9edef] fill=#fff" />');
 
 rightArea.appendChild(cameraIcon);
 rightArea.appendChild(cellphoneIcon);
