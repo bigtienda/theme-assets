@@ -106,7 +106,7 @@ const moreSvg = createElementWithAttributes('svg', {
   xmlns: 'http://www.w3.org/2000/svg',
   viewBox: '0 0 72 72'
 });
-moreSvg.innerHTML = '<circle cx="36" cy="53.9" r="6" class="dark:fill-[#e9edef]" fill=#fff/> <circle cx="36" cy="35.9" r="6" class="dark:fill-[#e9edef] fill=#fff"/> <circle cx="36" cy="17.9" r="6" class="dark:fill-[#e9edef] fill=#fff"/>';
+moreSvg.innerHTML = '<circle cx="36" cy="53.9" r="6" class="dark:fill-[#e9edef]" fill=#fff /> <circle cx="36" cy="35.9" r="6" class="dark:fill-[#e9edef]" fill=#fff /> <circle cx="36" cy="17.9" r="6" class="dark:fill-[#e9edef]" fill=#fff />';
 
 backButton.appendChild(backButtonSvg);
 profileImage.appendChild(profileImg);
