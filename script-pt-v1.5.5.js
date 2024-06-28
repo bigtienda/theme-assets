@@ -192,7 +192,7 @@ chatViewContainer.insertAdjacentElement('afterbegin', chatStartInfo);
             messageAudio.style.display = 'none';
             let profileImage = typebotContainer.querySelector('#profile-image img');
             let autoplay = (messageAudio.getAttribute('autoplay') != null)? 'true' : 'false';
-            messageAudio.insertAdjacentHTML('afterend','<wave-audio-path-player src="'+ messageAudio.src +'" wave-width="'+ messageAudioWidth +'" wave-height="40" class="z-20" profile-src="'+ profileImage.src +'" received-message="'+ messageTime +'" autoplay="'+ autoplay +'"></wave-audio-path-player>')
+            messageAudio.insertAdjacentHTML('afterend','<wave-audio-path-player src="'+ messageAudio.src +'" wave-width="'+ messageAudioWidth +'" wave-height="40" class="z-20" profile-src="'+ profileImage.src +'" received-message="'+ messageTime +'" autoplay="'+ autoplay +'"></wave-audio-path-player>');
           } else {
             let messageContent = messageBox.querySelector('div > div[data-element-type="p"] > span');
 
