@@ -182,18 +182,6 @@ chatView.insertAdjacentElement('afterbegin', chatStartInfo);
   const alertNotify = document.createElement('audio');
   alertNotify.src = 'https://s3.fr-par.scw.cloud/typebot/public/typebots/rx0zcrlqkhifqajxuzr6txa9/blocks/ttfglhs9oks32ebn2ymqcrp1';
 
-  function createElementWithAttributes(tag, attributes) {
-    const element = document.createElement(tag);
-    for (const [key, value] of Object.entries(attributes)) {
-      if (key === 'classList') {
-        element.classList.add(...value);
-      } else {
-        element.setAttribute(key, value);
-      }
-    }
-    return element;
-  }
-
   setInterval(() => {
     const isTyping = typebotContainer.querySelector('.bubble1');
     const sibling = isTyping?.parentElement?.parentElement?.nextSibling;
