@@ -175,24 +175,32 @@ chatViewContainer.insertAdjacentElement('afterbegin', chatStartInfo);
         } else {
           let messageAudio = messageBox.querySelector('audio');
           if (messageAudio) {
-            let messageAudio = messageBox.querySelector('audio');
-          if(messageAudio){
             let width = window.innerWidth;
             let messageAudioWidth = 130;
-            if(width >= 320 && width < 375){
-                messageAudioWidth = 150;
-            }else if(width >= 375 && width < 420){
-                messageAudioWidth = 170;
-            }else if(width >= 420){
-                messageAudioWidth = 190;
+            if (width >= 320 && width < 375) {
+              messageAudioWidth = 150;
+            } else if (width >= 375 && width < 420) {
+              messageAudioWidth = 170;
+            } else if (width >= 420) {
+              messageAudioWidth = 190;
             }
 
             messageAudio.pause();
             messageAudio.currentTime = 0;
             messageAudio.style.display = 'none';
             let profileImage = typebotContainer.querySelector('#profile-image img');
-            let autoplay = (messageAudio.getAttribute('autoplay') != null)? 'true' : 'false';
-            messageAudio.insertAdjacentHTML('afterend','<wave-audio-path-player src="'+ messageAudio.src +'" wave-width="'+ messageAudioWidth +'" wave-height="40" class="z-20" profile-src="'+ profileImage.src +'" received-message="'+ messageTime +'" autoplay="'+ autoplay +'"></wave-audio-path-player>');
+            let autoplay = messageAudio.getAttribute('autoplay') != null ? 'true' : 'false';
+
+            let waveAudioPathPlayer = document.createElement('wave-audio-path-player');
+            waveAudioPathPlayer.src = messageAudio.src;
+            waveAudioPathPlayer.setAttribute('wave-width', messageAudioWidth);
+            waveAudioPathPlayer.setAttribute('wave-height', '40');
+            waveAudioPathPlayer.classList.add('z-20');
+            waveAudioPathPlayer.setAttribute('profile-src', profileImage.src);
+            waveAudioPathPlayer.setAttribute('received-message', messageTime);
+            waveAudioPathPlayer.setAttribute('autoplay', autoplay);
+
+            messageAudio.insertAdjacentElement('afterend', waveAudioPathPlayer);
           } else {
             let messageContent = messageBox.querySelector('div > div[data-element-type="p"] > span');
 
