@@ -8,6 +8,8 @@ function createElementWithAttributes(tag, attributes) {
       element.classList.add(...value);
     } else if (key === 'textContent') {
       element.textContent = value;
+    } else if (key === 'innerHTML') {
+      element.innerHTML = value;
     } else {
       element.setAttribute(key, value);
     }
