@@ -2,10 +2,11 @@ var ht=Object.defineProperty,ot=(t,e,i)=>e in t?ht(t,e,{enumerable:!0,configurab
 
 /* begin:: functions */
 function createElementWithAttributes(tag, attributes) {
+  let element;
   if (tag === 'svg'){
-    const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    element = document.createElementNS('http://www.w3.org/2000/svg', tag);
   }else{
-    const element = document.createElement(tag);
+    element = document.createElement(tag);
   }
   for (const [key, value] of Object.entries(attributes)) {
     if (key === 'classList') {
