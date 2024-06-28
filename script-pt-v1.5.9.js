@@ -6,6 +6,8 @@ function createElementWithAttributes(tag, attributes) {
   for (const [key, value] of Object.entries(attributes)) {
     if (key === 'classList') {
       element.classList.add(...value);
+    } else if (key === 'textContent') {
+      element.textContent = value;
     } else {
       element.setAttribute(key, value);
     }
