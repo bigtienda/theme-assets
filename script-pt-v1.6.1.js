@@ -2,14 +2,16 @@ var ht=Object.defineProperty,ot=(t,e,i)=>e in t?ht(t,e,{enumerable:!0,configurab
 
 /* begin:: functions */
 function createElementWithAttributes(tag, attributes) {
-  const element = document.createElement(tag);
+  if (tag === 'svg'){
+    const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  }else{
+    const element = document.createElement(tag);
+  }
   for (const [key, value] of Object.entries(attributes)) {
     if (key === 'classList') {
       element.classList.add(...value);
     } else if (key === 'textContent') {
       element.textContent = value;
-    } else if (key === 'innerHTML') {
-      element.innerHTML = value;
     } else {
       element.setAttribute(key, value);
     }
