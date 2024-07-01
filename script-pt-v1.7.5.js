@@ -28,8 +28,14 @@ const runColorMode = (fn) => {
   fn(query.matches);
   query.addEventListener('change', (event) => fn(event.matches));
 }
+/* end:: dark-mode */
 
-runColorMode((isDarkMode) => {
+/* begin:: add-stylesheet */
+const linkStyle  = document.createElement('link');
+linkStyle.rel  = 'stylesheet';
+linkStyle.type = 'text/css';
+linkStyle.href = '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css';
+linkStyle.onload = runColorMode((isDarkMode) => {
   if (isDarkMode) {
     document.querySelector('html').classList.remove('light');
     document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('light');
@@ -44,13 +50,6 @@ runColorMode((isDarkMode) => {
     document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('light');
   }
 });
-/* end:: dark-mode */
-
-/* begin:: add-stylesheet */
-const linkStyle  = document.createElement('link');
-linkStyle.rel  = 'stylesheet';
-linkStyle.type = 'text/css';
-linkStyle.href = '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css';
 document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').insertAdjacentElement('beforebegin', linkStyle);
 /* end:: add-stylesheet */
 
