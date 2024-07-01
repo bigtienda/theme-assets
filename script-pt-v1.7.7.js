@@ -31,26 +31,36 @@ const runColorMode = (fn) => {
 /* end:: dark-mode */
 
 /* begin:: add-stylesheet */
-const linkStyle  = document.createElement('link');
-linkStyle.rel  = 'stylesheet';
-linkStyle.type = 'text/css';
-linkStyle.href = '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css';
-linkStyle.onload = runColorMode((isDarkMode) => {
-  if (isDarkMode) {
-    document.querySelector('html').classList.remove('light');
-    document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('light');
-    
-    document.querySelector('html').classList.add('dark');
-    document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('dark');
-  } else {
-    document.querySelector('html').classList.remove('dark');
-    document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('dark');
+const fetchStyle = function(element, url) {
+  return new Promise((resolve, reject) => {
+    let link = document.createElement('link');
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
+    link.onload = resolve;
+    link.href = url;
+    element.insertBefore(link, headScript);
+  });
+};
 
-    document.querySelector('html').classList.add('light');
-    document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('light');
-  }
+const typebotContainerElement = document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container');
+fetchStyle(typebotContainerElement, '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css').then(() => {
+  runColorMode((isDarkMode) => {
+    if (isDarkMode) {
+      document.querySelector('html').classList.remove('light');
+      document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('light');
+      
+      document.querySelector('html').classList.add('dark');
+      document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('dark');
+    } else {
+      document.querySelector('html').classList.remove('dark');
+      document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('dark');
+  
+      document.querySelector('html').classList.add('light');
+      document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('light');
+    }
+  });
 });
-document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').insertAdjacentElement('beforebegin', linkStyle);
+
 /* end:: add-stylesheet */
 
 /* begin:: top-bar */
