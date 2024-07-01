@@ -51,7 +51,7 @@ const linkStyle  = document.createElement('link');
 linkStyle.rel  = 'stylesheet';
 linkStyle.type = 'text/css';
 linkStyle.href = '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css';
-document.querySelector('typebot-standard').shadowRoot.insertAdjacentElement('beforebegin', linkStyle);
+document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').insertAdjacentElement('beforebegin', linkStyle);
 /* end:: add-stylesheet */
 
 /* begin:: top-bar */
