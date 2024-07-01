@@ -33,30 +33,25 @@ const runColorMode = (fn) => {
 /* begin:: add-stylesheet */
 const fetchStyle = function(element, url) {
   return new Promise((resolve, reject) => {
-    let link = document.createElement('link');
-    link.type = 'text/css';
-    link.rel = 'stylesheet';
-    link.onload = resolve;
-    link.href = url;
-    element.insertAdjacentElement('beforebegin', link);
+    let linkStyle = document.createElement('link');
+    linkStyle.type = 'text/css';
+    linkStyle.rel = 'stylesheet';
+    linkStyle.onload = resolve;
+    linkStyle.href = url;
+    element.insertAdjacentElement('beforebegin', linkStyle);
   });
 };
 
 const typebotContainerElement = document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container');
 fetchStyle(typebotContainerElement, '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css').then(() => {
+  document.querySelector('html').classList.add('loaded');
   runColorMode((isDarkMode) => {
-    if (isDarkMode) {
-      document.querySelector('html').classList.remove('light');
-      document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('light');
-      
+    if (isDarkMode) {      
       document.querySelector('html').classList.add('dark');
       document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('dark');
     } else {
       document.querySelector('html').classList.remove('dark');
       document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('dark');
-  
-      document.querySelector('html').classList.add('light');
-      document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.add('light');
     }
   });
 });
