@@ -38,7 +38,7 @@ const fetchStyle = function(element, url) {
     link.rel = 'stylesheet';
     link.onload = resolve;
     link.href = url;
-    element.insertBefore(link, headScript);
+    element.insertAdjacentElement('beforebegin', link);
   });
 };
 
