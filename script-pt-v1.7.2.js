@@ -46,6 +46,15 @@ runColorMode((isDarkMode) => {
 });
 /* end:: dark-mode */
 
+/* begin:: add-stylesheet */
+const linkStyle  = document.createElement('link');
+linkStyle.rel  = 'stylesheet';
+linkStyle.type = 'text/css';
+linkStyle.href = '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css';
+document.querySelector('typebot-standard').shadowRoot.insertAdjacentHTML('afterbegin', linkStyle);
+
+/* end:: add-stylesheet */
+
 /* begin:: top-bar */
 const profileName = document.currentScript.getAttribute('data-profile-name');
 const profilePhotoUrl = document.currentScript.getAttribute('data-profile-photo-url');
