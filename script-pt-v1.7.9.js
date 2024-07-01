@@ -44,7 +44,6 @@ const fetchStyle = function(element, url) {
 
 const typebotContainerElement = document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container');
 fetchStyle(typebotContainerElement, '//cdn.jsdelivr.net/gh/bigtienda/theme-assets/style-v1.0.0.css').then(() => {
-  document.querySelector('html').classList.add('loaded');
   runColorMode((isDarkMode) => {
     if (isDarkMode) {      
       document.querySelector('html').classList.add('dark');
@@ -54,6 +53,7 @@ fetchStyle(typebotContainerElement, '//cdn.jsdelivr.net/gh/bigtienda/theme-asset
       document.querySelector('typebot-standard').shadowRoot.querySelector('.typebot-container').classList.remove('dark');
     }
   });
+  document.querySelector('html').classList.add('loaded');
 });
 
 /* end:: add-stylesheet */
